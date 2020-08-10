@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 provider "kubernetes" {
-  version                = "~> 2"
+  version                = "~> 1"
   host                   = data.aws_eks_cluster.itse-apps-prod-1.endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.itse-apps-prod-1.certificate_authority.0.data)
   token                  = data.aws_eks_cluster_auth.itse-apps-prod-1.token
