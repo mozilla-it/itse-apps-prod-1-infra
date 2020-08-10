@@ -1,5 +1,6 @@
 locals {
   cluster_features = {
+    "prometheus"         = true
     "flux"               = true
     "flux_helm_operator" = true
     "external_secrets"   = true
