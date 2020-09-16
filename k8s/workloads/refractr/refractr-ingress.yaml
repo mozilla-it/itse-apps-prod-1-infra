@@ -33,6 +33,9 @@ spec:
       service:
         annotations:
           service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+          # not really well documented except for this here:
+          # https://github.com/kubernetes/kubernetes/issues/63959
+          service.beta.kubernetes.io/aws-load-balancer-eip-allocations: "eipalloc-0e9eb2d9f63a68ab8,eipalloc-0f4a591198b52e017,eipalloc-06d4150517deeeef7"
       metrics:
         enabled: true
     rbac:
