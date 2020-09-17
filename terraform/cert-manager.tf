@@ -22,7 +22,7 @@ resource "null_resource" "cert_manager_crd" {
     command     = <<EOF
 for i in `seq 1 10`; do \
   echo $kube_config | base64 --decode > kube_config.yaml & \
-  kubectl apply --validate=false -f ${local.cert_manager_crd_manifest} --kubeconfig kube_config.yaml && break ||
+  kubectl apply -f ${local.cert_manager_crd_manifest} --kubeconfig kube_config.yaml && break ||
   sleep 10; \
 done; \
 rm kube_config.yaml;
