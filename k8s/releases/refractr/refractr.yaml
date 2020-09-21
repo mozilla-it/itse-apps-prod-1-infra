@@ -16,7 +16,9 @@ spec:
     name: refractr
     version: "1.0.7"
   values:
-    issuer: prod
+    my_issuer:
+      create: true
+      name: prod
     environment: prod
     refractr:
       deployment_name: refractr
