@@ -17,7 +17,7 @@ spec:
   chart:
     repository: https://kubernetes.github.io/ingress-nginx
     name: ingress-nginx
-    version: "3.3.0"
+    version: "3.7.1"
   values:
     controller:
       useIngressClassOnly: true
@@ -42,7 +42,13 @@ spec:
       config:
         use-proxy-protocol: "false"
         use-forwarded-headers: "true"
-        proxy-real-ip-cidr: "0.0.0.0/0"   # restrict this to the IP addresses of ELB
+        # restrict this to the IP addresses of ELB
+        proxy-real-ip-cidr: "0.0.0.0/0"
+        # explicitly set HSTS values to what mozilla.{com,org} had in the Datacenter
+        hsts: "true"
+        hsts-include-subdomains: "true"
+        hsts-max-age: "31536000"
+        hsts-preload: "false"
       service:
         externalTrafficPolicy: "Local"
         annotations:
