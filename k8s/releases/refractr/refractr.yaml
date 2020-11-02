@@ -25,6 +25,7 @@ spec:
       name: prod
       dns:
         dnsNames:
+        - mozilla.org
         - malware-error.mozilla.com
         - '*.malware-error.mozilla.com'
         - phish-error.mozilla.com
