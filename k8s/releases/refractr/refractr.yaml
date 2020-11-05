@@ -32,6 +32,7 @@ spec:
         - '*.phish-error.mozilla.com'
         - phish-report.mozilla.com
         - '*.phish-report.mozilla.com'
+        - '*.www.mozilla.com'
         hostedZoneID: Z06469063HC60S7SHF706
     environment: prod
     refractr:
