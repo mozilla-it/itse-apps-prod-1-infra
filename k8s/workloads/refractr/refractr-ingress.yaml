@@ -24,17 +24,17 @@ spec:
       enableCustomResources: false
       autoscaling:
         enabled: true
-        minReplicas: 2
-        maxReplicas: 11
+        minReplicas: 5
+        maxReplicas: 20
         targetCPUUtilizationPercentage: 80
         targetMemoryUtilizationPercentage: 80
       resources:
         requests:
-          cpu: 100m
-          memory: 256Mi
-        limits:
           cpu: 200m
           memory: 512Mi
+        limits:
+          cpu: 512m
+          memory: 1Gi
       admissionWebhooks:
         enable: false
       scope:
