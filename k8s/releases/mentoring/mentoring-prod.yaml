@@ -16,6 +16,7 @@ spec:
     name: mentoring
     version: "0.1.2"
   values:
+    callbackUrl: "https://mentoring.mozilla.com/oidc/callback/"
     postgresql:
       enabled: false
     externalSecrets:
