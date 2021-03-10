@@ -21,3 +21,6 @@ spec:
     externalSecrets:
       enabled: true
       secretName: /prod/mentoring
+    image:
+      repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/mentoring
+      tag: 0.1.2
