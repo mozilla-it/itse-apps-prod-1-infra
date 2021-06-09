@@ -15,13 +15,16 @@ locals {
 
   node_groups = {
     default_node_group = {
-      # For a map of objects, none or all variable values must be defined.
-      # https://github.com/hashicorp/terraform/issues/19898
+      # name explicitly specified only to handle upstream EKS changes: 
+      # https://github.com/terraform-aws-modules/terraform-aws-eks/blob/master/docs/upgrades.md#upgrade-module-to-v1700-for-managed-node-groups
+      # should probably remove name & use name_prefix next time nodegroup is upgraded:
+      # https://github.com/terraform-aws-modules/terraform-aws-eks/tree/master/modules/node_groups#node_groups-and-node_groups_defaults-keys
+      name             = "itse-apps-prod-1-default_node_group-neutral-cat",
       desired_capacity = 5,
       min_capacity     = 5,
       disk_size        = 120,
       max_capacity     = 20,
-      instance_type    = "m5.large",
+      instance_types   = ["m5.large"],
       subnets          = data.terraform_remote_state.vpc.outputs.private_subnets
     }
   }
