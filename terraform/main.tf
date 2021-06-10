@@ -15,11 +15,6 @@ locals {
 
   node_groups = {
     default_node_group = {
-      # name explicitly specified only to handle upstream EKS changes: 
-      # https://github.com/terraform-aws-modules/terraform-aws-eks/blob/master/docs/upgrades.md#upgrade-module-to-v1700-for-managed-node-groups
-      # should probably remove name & use name_prefix next time nodegroup is upgraded:
-      # https://github.com/terraform-aws-modules/terraform-aws-eks/tree/master/modules/node_groups#node_groups-and-node_groups_defaults-keys
-      name             = "itse-apps-prod-1-default_node_group-neutral-cat",
       desired_capacity = 5,
       min_capacity     = 5,
       disk_size        = 120,
@@ -44,7 +39,7 @@ locals {
 module "itse-apps-prod-1" {
   source                      = "github.com/mozilla-it/terraform-modules//aws/eks?ref=master"
   cluster_name                = "itse-apps-prod-1"
-  cluster_version             = "1.17"
+  cluster_version             = "1.18"
   vpc_id                      = data.terraform_remote_state.vpc.outputs.vpc_id
   cluster_subnets             = data.terraform_remote_state.vpc.outputs.public_subnets
   cluster_features            = local.cluster_features
