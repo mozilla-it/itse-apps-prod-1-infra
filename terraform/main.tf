@@ -14,7 +14,7 @@ locals {
   }
 
   node_groups = {
-    default_node_group = {
+    green_node_group = {
       desired_capacity = 5,
       min_capacity     = 5,
       disk_size        = 120,
