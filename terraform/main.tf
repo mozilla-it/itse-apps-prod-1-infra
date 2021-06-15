@@ -47,6 +47,7 @@ module "itse-apps-prod-1" {
   external_secrets_settings   = local.external_secrets_settings
   node_groups                 = local.node_groups
   fluentd_papertrail_settings = local.fluentd_papertrail_settings
+  enable_logging              = true
   admin_users_arn             = ["arn:aws:iam::783633885093:role/maws-admin", "arn:aws:iam::517826968395:role/itsre-admin"]
 }
 
