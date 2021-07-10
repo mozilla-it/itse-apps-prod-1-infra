@@ -61,7 +61,5 @@ resource "aws_eip" "refractr_eip" {
     Name        = "refractr-prod-${local.subnet_az[count.index]}"
     SubnetId    = local.subnet_id[count.index]
     App         = "refractr"
-    Environment = "prod"
-    Terraform   = "true"
   }
 }
