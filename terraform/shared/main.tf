@@ -58,8 +58,8 @@ resource "aws_eip" "refractr_eip" {
   vpc   = true
 
   tags = {
-    Name        = "refractr-prod-${local.subnet_az[count.index]}"
-    SubnetId    = local.subnet_id[count.index]
-    App         = "refractr"
+    Name     = "refractr-prod-${local.subnet_az[count.index]}"
+    SubnetId = local.subnet_id[count.index]
+    App      = "refractr"
   }
 }
