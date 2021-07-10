@@ -1,0 +1,80 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: pastebin
+  namespace: pastebin-prod
+  labels:
+    app: pastebin
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: regex:^(v[0-9]+.[0-9]+.[0-9]+)$
+spec:
+  releaseName: pastebin
+  chart:
+    repository: https://mozilla-it.github.io/helm-charts/
+    name: pastebin
+    version: "0.1.1"
+  values:
+    configMap:
+      data:
+        DB_PORT: "3306"
+        VAL: "5"
+    deployment:
+      port: "8000"
+      replicaCount: "1"
+    externalSecrets:
+      enabled: true
+      name: pastebin
+      secrets:
+      - key: /prod/pastebin/envvar
+        name: DB_HOST
+        property: database_host
+      - key: /prod/pastebin/envvar
+        name: DB_NAME
+        property: database_name
+      - key: /prod/pastebin/envvar
+        name: DB_PASS
+        property: database_password
+      - key: /prod/pastebin/envvar
+        name: DB_USER
+        property: database_user
+      - key: /prod/pastebin/envvar
+        name: SESSION_KEY
+        property: session_key
+    image:
+      pullPolicy: Always
+      tag: v3.5.4
+    ingress:
+      hosts:
+        - host: paste.prod.mozit.cloud
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+              serviceName: pastebin
+              servicePort: 80
+        - host: paste.mozilla.org
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+              serviceName: pastebin
+              servicePort: 80
+        - host: pastebin.mozilla.org
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+              serviceName: pastebin
+              servicePort: 80
+      le:
+        name: prod
+      name: pastebin
+      tls:
+        - hosts:
+            - paste.mozilla.org
+          secretName: cert-paste-mozilla-org
+        - hosts:
+            - pastebin.mozilla.org
+          secretName: cert-pastebin-mozilla-org
+        - hosts:
+            - paste.prod.mozit.cloud
+          secretName: cert-paste-prod-mozit-cloud
