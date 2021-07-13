@@ -14,7 +14,7 @@ variable "project" {
 }
 
 variable "project_desc" {
-  default = "paste.allizom.org"
+  default = "paste.mozilla.org"
   type    = string
 }
 
