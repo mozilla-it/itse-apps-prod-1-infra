@@ -1,5 +1,5 @@
 module "pastebin-db" {
-  source = "git::https://github.com/mozilla-it/terraform-modules.git//aws/database"
+  source = "github.com/mozilla-it/terraform-modules//aws/database?ref=master"
 
   identifier = "${var.project}-${var.environment}"
   name       = var.project
