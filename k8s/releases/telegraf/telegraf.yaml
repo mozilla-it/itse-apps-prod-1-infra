@@ -19,6 +19,8 @@ spec:
     config:
       global_tags:
         cluster: itse-apps-prod-1-infra
+      agent:
+        interval: "300s"
       inputs:
         - x509_cert:
             sources:
