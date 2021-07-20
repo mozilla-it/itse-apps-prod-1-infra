@@ -19,6 +19,7 @@ spec:
     configMap:
       data:
         DB_PORT: "3306"
+        DPASTE_BASE_DOMAIN: "paste.mozilla.org"
         VAL: "5"
     deployment:
       port: "8000"
@@ -44,7 +45,7 @@ spec:
         property: session_key
     image:
       pullPolicy: Always
-      tag: v3.5.4
+      tag: v3.5.5
     ingress:
       hosts:
         - host: paste.prod.mozit.cloud
