@@ -46,37 +46,37 @@ spec:
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
-      tag: v3.5.5
+      tag: v3.5.6
     ingress:
       hosts:
-        - host: paste.prod.mozit.cloud
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
-              serviceName: pastebin
-              servicePort: 80
-        - host: paste.mozilla.org
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
-              serviceName: pastebin
-              servicePort: 80
-        - host: pastebin.mozilla.org
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
-              serviceName: pastebin
-              servicePort: 80
+      - host: paste.prod.mozit.cloud
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: pastebin
+          servicePort: 80
+      - host: paste.mozilla.org
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: pastebin
+          servicePort: 80
+      - host: pastebin.mozilla.org
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: pastebin
+          servicePort: 80
       le:
         name: prod
       name: pastebin
       tls:
-        - hosts:
-            - paste.mozilla.org
-          secretName: cert-paste-mozilla-org
-        - hosts:
-            - pastebin.mozilla.org
-          secretName: cert-pastebin-mozilla-org
-        - hosts:
-            - paste.prod.mozit.cloud
-          secretName: cert-paste-prod-mozit-cloud
+      - hosts:
+        - paste.mozilla.org
+        secretName: cert-paste-mozilla-org
+      - hosts:
+        - pastebin.mozilla.org
+        secretName: cert-pastebin-mozilla-org
+      - hosts:
+        - paste.prod.mozit.cloud
+        secretName: cert-paste-prod-mozit-cloud
