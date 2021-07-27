@@ -1,0 +1,11 @@
+cost_center             = "1410"
+environment             = "prod"
+moderator_mozilla       = "moderator.mozilla.org"
+mysql_instance          = "db.t3.micro"
+mysql_storage_allocated = 5
+mysql_storage_max       = 20
+mysql_version           = "5.6"
+project                 = "moderator"
+project_desc            = "moderator.mozilla.org"
+project_email           = "it-sre@mozilla.com"
+region                  = "us-west-2"
