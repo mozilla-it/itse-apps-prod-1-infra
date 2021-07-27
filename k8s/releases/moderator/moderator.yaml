@@ -14,7 +14,7 @@ spec:
   chart:
     repository: https://mozilla-it.github.io/helm-charts/
     name: moderator
-    version: "0.1.1"
+    version: "0.2.1"
   values:
     configMap:
       data:
@@ -22,8 +22,6 @@ spec:
         ANON_ALWAYS: true
         AWS_DEFAULT_REGION: us-west-2
         FROM_NOREPLY: Mozilla Moderator <no-reply@moderator.mozilla.org>
-        MOZILLIANS_API_BASE: https://mozillians.org/api/v1/users/
-        MOZILLIANS_API_URL: https://mozillians.org/api/v2/
         OIDC_OP_AUTHORIZATION_ENDPOINT: https://auth.mozilla.auth0.com/authorize
         OIDC_OP_DOMAIN: auth.mozilla.auth0.com
         OIDC_OP_JWKS_ENDPOINT: https://auth.mozilla.auth0.com/.well-known/jwks.json
@@ -48,12 +46,6 @@ spec:
         - key: /prod/moderator/envvar
           name: DATABASE_URL
           property: DATABASE_URL
-        - key: /prod/moderator/envvar
-          name: MOZILLIANS_API_APPNAME
-          property: MOZILLIANS_API_APPNAME
-        - key: /prod/moderator/envvar
-          name: MOZILLIANS_API_KEY
-          property: MOZILLIANS_API_KEY
         - key: /prod/moderator/envvar
           name: OIDC_RP_CLIENT_ID
           property: OIDC_RP_CLIENT_ID
