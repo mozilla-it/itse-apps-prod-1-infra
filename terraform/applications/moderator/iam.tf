@@ -4,6 +4,7 @@
 data "aws_iam_policy_document" "ecr_rw" {
   statement {
     actions = [
+      "ecr:DescribeImages",
       "ecr:GetAuthorizationToken",
     ]
 
@@ -17,7 +18,6 @@ data "aws_iam_policy_document" "ecr_rw" {
       "ecr:GetRepositoryPolicy",
       "ecr:DescribeRepositories",
       "ecr:ListImages",
-      "ecr:DescribeImages",
       "ecr:BatchGetImage",
       "ecr:InitiateLayerUpload",
       "ecr:UploadLayerPart",
