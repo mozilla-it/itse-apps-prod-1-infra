@@ -37,52 +37,52 @@ spec:
       enabled: true
       name: moderator
       secrets:
-        - key: /prod/moderator/envvar
-          name: AWS_ACCESS_KEY_ID
-          property: AWS_ACCESS_KEY_ID
-        - key: /prod/moderator/envvar
-          name: AWS_SECRET_ACCESS_KEY
-          property: AWS_SECRET_ACCESS_KEY
-        - key: /prod/moderator/envvar
-          name: DATABASE_URL
-          property: DATABASE_URL
-        - key: /prod/moderator/envvar
-          name: OIDC_RP_CLIENT_ID
-          property: OIDC_RP_CLIENT_ID
-        - key: /prod/moderator/envvar
-          name: OIDC_RP_CLIENT_SECRET
-          property: OIDC_RP_CLIENT_SECRET
-        - key: /prod/moderator/envvar
-          name: SECRET_KEY
-          property: SECRET_KEY
-        - key: /prod/moderator/envvar
-          name: SENTRY_DSN
-          property: SENTRY_DSN
+      - key: /prod/moderator/envvar
+        name: AWS_ACCESS_KEY_ID
+        property: AWS_ACCESS_KEY_ID
+      - key: /prod/moderator/envvar
+        name: AWS_SECRET_ACCESS_KEY
+        property: AWS_SECRET_ACCESS_KEY
+      - key: /prod/moderator/envvar
+        name: DATABASE_URL
+        property: DATABASE_URL
+      - key: /prod/moderator/envvar
+        name: OIDC_RP_CLIENT_ID
+        property: OIDC_RP_CLIENT_ID
+      - key: /prod/moderator/envvar
+        name: OIDC_RP_CLIENT_SECRET
+        property: OIDC_RP_CLIENT_SECRET
+      - key: /prod/moderator/envvar
+        name: SECRET_KEY
+        property: SECRET_KEY
+      - key: /prod/moderator/envvar
+        name: SENTRY_DSN
+        property: SENTRY_DSN
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
-      tag: v0.1.0
+      tag: v2.0.0
     ingress:
       hosts:
-        - host: moderator.prod.mozit.cloud
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
-              serviceName: moderator
-              servicePort: 80
-        - host: moderator.mozilla.org
-          paths:
-            - path: /
-              pathType: ImplementationSpecific
-              serviceName: moderator
-              servicePort: 80
+      - host: moderator.prod.mozit.cloud
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: moderator
+          servicePort: 80
+      - host: moderator.mozilla.org
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: moderator
+          servicePort: 80
       le:
         name: prod
       name: moderator
       tls:
-        - hosts:
-            - moderator.mozilla.org
-          secretName: cert-moderator-mozilla-org
-        - hosts:
-            - moderator.prod.mozit.cloud
-          secretName: cert-moderator-prod-mozit-cloud
+      - hosts:
+        - moderator.mozilla.org
+        secretName: cert-moderator-mozilla-org
+      - hosts:
+        - moderator.prod.mozit.cloud
+        secretName: cert-moderator-prod-mozit-cloud
