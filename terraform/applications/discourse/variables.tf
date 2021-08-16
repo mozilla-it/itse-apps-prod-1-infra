@@ -14,7 +14,7 @@ variable "cost_center" {
 }
 
 variable "discourse_cdn_zone" {
-  default = "discourse.mozilla.org"
+  default = "discourse-prod.itsre-apps.mozit.cloud"
   type    = string
 }
 
