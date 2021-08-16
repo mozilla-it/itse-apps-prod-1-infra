@@ -44,7 +44,7 @@ variable "project_email" {
 }
 
 variable "psql_instance" {
-  default = "db.t2.micro"
+  default = "db.t3.small"
   type    = string
 }
 
@@ -59,7 +59,7 @@ variable "psql_storage_max" {
 }
 
 variable "psql_version" {
-  default = "10"
+  default = "10.15"
   type    = string
 }
 
