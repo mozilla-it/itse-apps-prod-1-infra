@@ -8,9 +8,7 @@ locals {
     "prometheus"         = true
   }
 
-  external_secrets_settings = {
-    secrets_path = "/prod/*"
-  }
+  external_secrets_settings = {}
 
   fluentd_papertrail_settings = {
     "externalSecrets.secretsKey" = "/prod/${module.itse-apps-prod-1.cluster_id}-papertrail"
@@ -45,6 +43,7 @@ module "itse-apps-prod-1" {
   cluster_version             = "1.18"
   enable_logging              = true
   external_secrets_settings   = local.external_secrets_settings
+  external_secrets_prefixes = ["/prod/*"]
   fluentd_papertrail_settings = local.fluentd_papertrail_settings
   flux_settings               = local.flux_settings
   node_groups                 = local.node_groups
