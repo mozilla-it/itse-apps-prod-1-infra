@@ -10,6 +10,10 @@ output "cluster_name" {
   value = module.itse-apps-prod-1.cluster_id
 }
 
+output "cluster_worker_iam_role_arn" {
+  value = module.itse-apps-prod-1.worker_iam_role_arn
+}
+
 output "refractr_eip_allocation_id" {
   value = aws_eip.refractr_eip.*.id
 }
