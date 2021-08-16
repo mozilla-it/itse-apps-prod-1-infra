@@ -43,7 +43,7 @@ module "itse-apps-prod-1" {
   cluster_version             = "1.18"
   enable_logging              = true
   external_secrets_settings   = local.external_secrets_settings
-  external_secrets_prefixes = ["/prod/*"]
+  external_secrets_prefixes   = ["/prod/*"]
   fluentd_papertrail_settings = local.fluentd_papertrail_settings
   flux_settings               = local.flux_settings
   node_groups                 = local.node_groups
