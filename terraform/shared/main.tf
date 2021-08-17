@@ -6,6 +6,7 @@ locals {
     "flux"               = true
     "flux_helm_operator" = true
     "prometheus"         = true
+    "configmapsecrets"   = true
   }
 
   external_secrets_settings = {}
@@ -48,6 +49,14 @@ module "itse-apps-prod-1" {
   flux_settings               = local.flux_settings
   node_groups                 = local.node_groups
   vpc_id                      = data.terraform_remote_state.vpc.outputs.vpc_id
+  prometheus_settings = {
+    "server.persistentVolume.size" : "50Gi"
+  }
+  prometheus_customization_settings = {
+    "influxdb.enabled" : "true"
+    "influxdb.secret_key" : "/prod/influxdb/prod"
+  }
+  influxdb = true
 }
 
 # Chicken and egg issue, this needs to exist first
