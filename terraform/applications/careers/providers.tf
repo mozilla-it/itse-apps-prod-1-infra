@@ -4,7 +4,7 @@ provider "aws" {
   # see https://github.com/hashicorp/terraform-provider-aws/issues/18311
   default_tags {
     tags = {
-      Terraform     = "true"
+      Terraform = "true"
     }
   }
 }
