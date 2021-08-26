@@ -9,7 +9,7 @@ metadata:
     env: prod
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: regex:^(prod-[a-f0-9]{7}-[0-9]*)$
+    filter.fluxcd.io/chart-image: regex:^(prod-v[0-9]+.[0-9]+.[0-9]+)$
 spec:
   releaseName: discourse-prod
   chart:
