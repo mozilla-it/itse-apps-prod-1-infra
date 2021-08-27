@@ -13,11 +13,6 @@ variable "cost_center" {
   type    = string
 }
 
-variable "discourse_cdn_zone" {
-  default = "discourse-prod.itsre-apps.mozit.cloud"
-  type    = string
-}
-
 variable "discourse_mozilla" {
   default = "discourse.mozilla.org"
   type    = string
