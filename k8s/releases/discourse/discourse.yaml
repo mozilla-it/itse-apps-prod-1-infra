@@ -1,121 +1,121 @@
----
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
-metadata:
-  name: discourse
-  namespace: discourse-prod
-  labels:
-    app: discourse
-    env: prod
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: regex:^(prod-v[0-9]+.[0-9]+.[0-9]+)$
-spec:
-  releaseName: discourse-prod
-  chart:
-    repository: https://mozilla-it.github.io/helm-charts/
-    name: discourse
-    version: "0.0.1"
-  values:
-    configMap:
-      data:
-        DISCOURSE_AUTO_EMAIL_IN_APPEND: true
-        DISCOURSE_AUTO_EMAIL_IN_DIVIDER: .
-        DISCOURSE_AUTO_EMAIL_IN_DOMAIN: discourse.mozilla.org
-        DISCOURSE_AUTO_EMAIL_IN_ENABLED: true
-        DISCOURSE_CDN_URL: https://cdn.discourse-prod.itsre-apps.mozit.cloud
-        DISCOURSE_CONTENT_SECURITY_POLICY: false
-        DISCOURSE_EMAIL_IN: true
-        DISCOURSE_EMAIL_IN_AUTHSERV_ID: amazonses.com
-        DISCOURSE_ENABLE_CORS: true
-        DISCOURSE_ENABLE_LOCAL_LOGINS: false
-        DISCOURSE_ENABLE_S3_UPLOADS: true
-        DISCOURSE_FORCE_HTTPS: true
-        DISCOURSE_HOSTNAME: discourse.mozilla.org
-        DISCOURSE_LOG_SIDEKIQ: 1
-        DISCOURSE_LOG_SIDEKIQ_INTERVAL: 1
-        DISCOURSE_MANUAL_POLLING_ENABLED: true
-        DISCOURSE_NOTIFICATION_EMAIL: notifications@discourse.mozilla.org
-        DISCOURSE_REPLY_BY_EMAIL_ADDRESS: replies+%{reply_key}@discourse.mozilla.org
-        DISCOURSE_REPLY_BY_EMAIL_ENABLED: true
-        DISCOURSE_S3_REGION: us-west-2
-        DISCOURSE_S3_USE_IAM_PROFILE: true
-        DISCOURSE_SMTP_ADDRESS: email-smtp.us-west-2.amazonaws.com
-        DISCOURSE_SMTP_PORT: 587
-        PG_MAJOR: 12
-    db:
-      migrate:
-        enabled: true
-    deployment:
-      arn_role: arn:aws:iam::783633885093:role/discourse/discourse-prod
-    externalSecrets:
-      enabled: true
-      name: discourse
-      secrets:
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_AKISMET_API_KEY
-        property: DISCOURSE_AKISMET_API_KEY
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_AUTH0_CALLBACK_URL
-        property: DISCOURSE_AUTH0_CALLBACK_URL
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_AUTH0_CLIENT_ID
-        property: DISCOURSE_AUTH0_CLIENT_ID
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_AUTH0_DOMAIN
-        property: DISCOURSE_AUTH0_DOMAIN
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_AUTH0_CLIENT_SECRET
-        property: DISCOURSE_AUTH0_CLIENT_SECRET
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_DB_HOST
-        property: DISCOURSE_DB_HOST
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_DB_NAME
-        property: DISCOURSE_DB_NAME
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_DB_PASSWORD
-        property: DISCOURSE_DB_PASSWORD
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_DB_USERNAME
-        property: DISCOURSE_DB_USERNAME
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_REDIS_HOST
-        property: DISCOURSE_REDIS_HOST
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_S3_UPLOAD_BUCKET
-        property: DISCOURSE_S3_UPLOAD_BUCKET
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_SMTP_PASSWORD
-        property: DISCOURSE_SMTP_PASSWORD
-      - key: /prod/discourse/envvar
-        name: DISCOURSE_SMTP_USER_NAME
-        property: DISCOURSE_SMTP_USER_NAME
-    image:
-      pullPolicy: Always
-      repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/discourse
-      tag: prod-v0.0.1
-    ingress:
-      hosts:
-      - host: discourse.prod.mozit.cloud
-        paths:
-        - path: /
-          pathType: ImplementationSpecific
-          serviceName: discourse
-          servicePort: 80
-      - host: discourse.mozilla.org
-        paths:
-        - path: /
-          pathType: ImplementationSpecific
-          serviceName: discourse
-          servicePort: 80
-      le:
-        name: prod
-      name: discourse
-      tls:
-      - hosts:
-        - discourse.mozilla.org
-        secretName: cert-discourse-mozilla-org
-      - hosts:
-        - discourse.prod.mozit.cloud
-        secretName: cert-discourse-prod-mozit-cloud
+# ---
+# apiVersion: helm.fluxcd.io/v1
+# kind: HelmRelease
+# metadata:
+#   name: discourse
+#   namespace: discourse-prod
+#   labels:
+#     app: discourse
+#     env: prod
+#   annotations:
+#     fluxcd.io/automated: "true"
+#     filter.fluxcd.io/chart-image: regex:^(prod-v[0-9]+.[0-9]+.[0-9]+)$
+# spec:
+#   releaseName: discourse-prod
+#   chart:
+#     repository: https://mozilla-it.github.io/helm-charts/
+#     name: discourse
+#     version: "0.0.1"
+#   values:
+#     configMap:
+#       data:
+#         DISCOURSE_AUTO_EMAIL_IN_APPEND: true
+#         DISCOURSE_AUTO_EMAIL_IN_DIVIDER: .
+#         DISCOURSE_AUTO_EMAIL_IN_DOMAIN: discourse.mozilla.org
+#         DISCOURSE_AUTO_EMAIL_IN_ENABLED: true
+#         DISCOURSE_CDN_URL: https://cdn.discourse-prod.itsre-apps.mozit.cloud
+#         DISCOURSE_CONTENT_SECURITY_POLICY: false
+#         DISCOURSE_EMAIL_IN: true
+#         DISCOURSE_EMAIL_IN_AUTHSERV_ID: amazonses.com
+#         DISCOURSE_ENABLE_CORS: true
+#         DISCOURSE_ENABLE_LOCAL_LOGINS: false
+#         DISCOURSE_ENABLE_S3_UPLOADS: true
+#         DISCOURSE_FORCE_HTTPS: true
+#         DISCOURSE_HOSTNAME: discourse.mozilla.org
+#         DISCOURSE_LOG_SIDEKIQ: 1
+#         DISCOURSE_LOG_SIDEKIQ_INTERVAL: 1
+#         DISCOURSE_MANUAL_POLLING_ENABLED: true
+#         DISCOURSE_NOTIFICATION_EMAIL: notifications@discourse.mozilla.org
+#         DISCOURSE_REPLY_BY_EMAIL_ADDRESS: replies+%{reply_key}@discourse.mozilla.org
+#         DISCOURSE_REPLY_BY_EMAIL_ENABLED: true
+#         DISCOURSE_S3_REGION: us-west-2
+#         DISCOURSE_S3_USE_IAM_PROFILE: true
+#         DISCOURSE_SMTP_ADDRESS: email-smtp.us-west-2.amazonaws.com
+#         DISCOURSE_SMTP_PORT: 587
+#         PG_MAJOR: 12
+#     db:
+#       migrate:
+#         enabled: true
+#     deployment:
+#       arn_role: arn:aws:iam::783633885093:role/discourse/discourse-prod
+#     externalSecrets:
+#       enabled: true
+#       name: discourse
+#       secrets:
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_AKISMET_API_KEY
+#         property: DISCOURSE_AKISMET_API_KEY
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_AUTH0_CALLBACK_URL
+#         property: DISCOURSE_AUTH0_CALLBACK_URL
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_AUTH0_CLIENT_ID
+#         property: DISCOURSE_AUTH0_CLIENT_ID
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_AUTH0_DOMAIN
+#         property: DISCOURSE_AUTH0_DOMAIN
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_AUTH0_CLIENT_SECRET
+#         property: DISCOURSE_AUTH0_CLIENT_SECRET
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_DB_HOST
+#         property: DISCOURSE_DB_HOST
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_DB_NAME
+#         property: DISCOURSE_DB_NAME
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_DB_PASSWORD
+#         property: DISCOURSE_DB_PASSWORD
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_DB_USERNAME
+#         property: DISCOURSE_DB_USERNAME
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_REDIS_HOST
+#         property: DISCOURSE_REDIS_HOST
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_S3_UPLOAD_BUCKET
+#         property: DISCOURSE_S3_UPLOAD_BUCKET
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_SMTP_PASSWORD
+#         property: DISCOURSE_SMTP_PASSWORD
+#       - key: /prod/discourse/envvar
+#         name: DISCOURSE_SMTP_USER_NAME
+#         property: DISCOURSE_SMTP_USER_NAME
+#     image:
+#       pullPolicy: Always
+#       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/discourse
+#       tag: prod-v0.0.1
+#     ingress:
+#       hosts:
+#       - host: discourse.prod.mozit.cloud
+#         paths:
+#         - path: /
+#           pathType: ImplementationSpecific
+#           serviceName: discourse
+#           servicePort: 80
+#       - host: discourse.mozilla.org
+#         paths:
+#         - path: /
+#           pathType: ImplementationSpecific
+#           serviceName: discourse
+#           servicePort: 80
+#       le:
+#         name: prod
+#       name: discourse
+#       tls:
+#       - hosts:
+#         - discourse.mozilla.org
+#         secretName: cert-discourse-mozilla-org
+#       - hosts:
+#         - discourse.prod.mozit.cloud
+#         secretName: cert-discourse-prod-mozit-cloud
