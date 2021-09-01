@@ -45,7 +45,7 @@ spec:
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/etherpad
-      tag: v1.0.0
+      tag: v1.0.1
     ingress:
       hosts:
       - host: pad.mozilla.org
