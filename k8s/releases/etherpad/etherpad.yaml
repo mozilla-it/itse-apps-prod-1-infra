@@ -45,28 +45,28 @@ spec:
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/etherpad
-      tag: v0.0.1
+      tag: v1.0.0
     ingress:
       hosts:
       - host: pad.mozilla.org
         paths:
-          - path: /
-            pathType: ImplementationSpecific
-            serviceName: oidc-gateway
-            servicePort: 80
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: oidc-gateway
+          servicePort: 80
       - host: pad.prod.mozit.cloud
         paths:
-          - path: /
-            pathType: ImplementationSpecific
-            serviceName: oidc-gateway
-            servicePort: 80
+        - path: /
+          pathType: ImplementationSpecific
+          serviceName: oidc-gateway
+          servicePort: 80
       le:
         issuer_create: true
         name: prod
       tls:
       - hosts:
-          - pad.mozilla.org
+        - pad.mozilla.org
         secretName: chart-pad-mozilla-org
       - hosts:
-          - pad.prod.mozit.cloud
+        - pad.prod.mozit.cloud
         secretName: chart-pad-prod-mozit-cloud
