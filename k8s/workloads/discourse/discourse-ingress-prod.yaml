@@ -55,7 +55,7 @@ spec:
           service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
           service.beta.kubernetes.io/aws-load-balancer-connection-draining-enabled: "true"
           service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "Environment=prod"
-          external-dns.alpha.kubernetes.io/hostname: "discourse.prod.mozit.cloud"
+          external-dns.alpha.kubernetes.io/hostname: "discourse.prod.mozit.cloud,discourse.mozilla.org"
       metrics:
         enabled: true
         service:
