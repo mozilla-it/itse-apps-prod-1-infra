@@ -42,7 +42,6 @@ spec:
         limit-rps: "84"
         proxy-body-size: 4m
         proxy-buffer-size: 16k
-        # restrict this to the IP addresses of ELB
         proxy-real-ip-cidr: "0.0.0.0/0"
         ssl-redirect: true
         use-forwarded-headers: "true"
