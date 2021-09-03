@@ -94,7 +94,7 @@ spec:
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/discourse
-      tag: prod-v0.0.2
+      tag: prod-v1.0.0
     ingress:
       hosts:
       - host: discourse.prod.mozit.cloud
