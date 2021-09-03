@@ -14,6 +14,14 @@ output "cluster_worker_iam_role_arn" {
   value = module.itse-apps-prod-1.worker_iam_role_arn
 }
 
+output "cluster_security_group_id" {
+  value = module.itse-apps-prod-1.cluster_security_group_id
+}
+
+output "worker_security_group_id" {
+  value = module.itse-apps-prod-1.worker_security_group_id
+}
+
 output "refractr_eip_allocation_id" {
   value = aws_eip.refractr_eip.*.id
 }
