@@ -15,7 +15,7 @@ resource "aws_s3_bucket" "mozilla-careers" {
   hosted_zone_id = local.s3_zone
   logging {
     target_bucket = aws_s3_bucket.logs.bucket
-    target_prefix = "stage-logs/"
+    target_prefix = "prod-logs/"
   }
 
   website {
