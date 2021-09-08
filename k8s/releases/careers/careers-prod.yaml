@@ -21,7 +21,7 @@ spec:
       minReplicas: 2
       maxReplicas: 3
     image:
-      tag: 'v2.1.0'
+      tag: 'v2.2.0'
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/careers
     externalSecrets:
       enabled: true
