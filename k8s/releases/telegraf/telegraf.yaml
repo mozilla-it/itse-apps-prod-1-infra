@@ -194,6 +194,7 @@ spec:
               - 'https://mozorg.cdn.mozilla.net:443'
               - 'https://newfirefox.mozilla.community:443'
               - 'https://nightly.mozilla.org:443'
+              - 'https://nucleus.mozilla.org:443'
               - 'https://observatory-test.mozilla.org:443'
               - 'https://onemozilla.org:443'
               - 'https://open.mozilla.org:443'
