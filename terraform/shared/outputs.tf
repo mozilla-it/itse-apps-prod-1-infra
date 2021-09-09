@@ -14,6 +14,10 @@ output "cluster_worker_iam_role_arn" {
   value = module.itse-apps-prod-1.worker_iam_role_arn
 }
 
+output "cluster_worker_iam_role_name" {
+  value = module.itse-apps-prod-1.worker_iam_role_name
+}
+
 output "cluster_security_group_id" {
   value = module.itse-apps-prod-1.cluster_security_group_id
 }
