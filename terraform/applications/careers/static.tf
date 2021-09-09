@@ -6,6 +6,10 @@ resource "aws_s3_bucket" "logs" {
   force_destroy = false
 }
 
+data "aws_route53_zone" "careers_domain" {
+  name = local.r53_zone_name
+}
+
 resource "aws_s3_bucket" "mozilla-careers" {
   bucket = local.bucket_name
   acl    = "log-delivery-write"
@@ -15,7 +19,7 @@ resource "aws_s3_bucket" "mozilla-careers" {
   hosted_zone_id = local.s3_zone
   logging {
     target_bucket = aws_s3_bucket.logs.bucket
-    target_prefix = "prod-logs/"
+    target_prefix = "${local.environment}-logs/"
   }
 
   website {
@@ -38,7 +42,7 @@ resource "aws_s3_bucket" "mozilla-careers" {
       "Resource": "arn:aws:s3:::${local.bucket_name}"
     },
     {
-      "Sid": "careersAllowIndexDotHTML",
+      "Sid": "careersAllowGetAll",
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
@@ -80,7 +84,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   logging_config {
     include_cookies = false
     bucket          = aws_s3_bucket.logs.bucket_domain_name
-    prefix          = "cflogs-prod"
+    prefix          = "cflogs-${local.environment}"
   }
 
   aliases = local.aliases
@@ -180,7 +184,7 @@ resource "aws_lambda_function" "lambda-headers" {
 }
 
 resource "aws_route53_record" "careers-cloudfront" {
-  zone_id = local.r53_zone
+  zone_id = data.aws_route53_zone.careers_domain.id
   name    = local.domain_name
   type    = "A"
   alias {

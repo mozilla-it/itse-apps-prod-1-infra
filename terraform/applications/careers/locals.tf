@@ -19,6 +19,6 @@ locals {
   domain_name               = "careers.prod.mozit.cloud"
   subject_alternative_names = ["*.mozilla.org"] # wildcard is here to try and do a zero downtime deployment.
   # two cloudfronts cannot exist with the same name, and marketing already owns careers.mozilla.org
-  aliases  = concat([local.domain_name], local.subject_alternative_names)
-  r53_zone = "Z0567090QXTU93SH7QB3" # stage.mozit.cloud
+  aliases       = concat([local.domain_name], local.subject_alternative_names)
+  r53_zone_name = "prod.mozit.cloud."
 }
