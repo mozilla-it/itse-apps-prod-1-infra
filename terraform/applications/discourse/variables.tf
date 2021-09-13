@@ -59,7 +59,7 @@ variable "psql_storage_max" {
 }
 
 variable "psql_version" {
-  default = "10.15"
+  default = "10.17"
   type    = string
 }
 
