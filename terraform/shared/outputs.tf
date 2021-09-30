@@ -11,7 +11,7 @@ output "cluster_name" {
 }
 
 output "cluster_primary_security_group_id" {
-  value = module.itse-apps-stage-1.cluster_primary_security_group_id
+  value = module.itse-apps-prod-1.cluster_primary_security_group_id
 }
 
 output "cluster_worker_iam_role_arn" {
