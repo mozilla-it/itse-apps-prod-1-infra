@@ -46,7 +46,7 @@ spec:
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
-      tag: v3.5.7
+      tag: v3.5.8
     ingress:
       hosts:
       - host: paste.prod.mozit.cloud
