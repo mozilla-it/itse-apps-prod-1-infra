@@ -15,7 +15,7 @@ spec:
   chart:
     repository: https://mozilla-it.github.io/helm-charts/
     name: discourse
-    version: "0.0.1"
+    version: "2.0.0"
   values:
     configMap:
       data:
@@ -50,6 +50,7 @@ spec:
       arn_role: arn:aws:iam::783633885093:role/discourse/discourse-prod
     externalSecrets:
       enabled: true
+      loggerSecretKey: /prod/discourse/logger
       name: discourse
       secrets:
       - key: /prod/discourse/envvar
