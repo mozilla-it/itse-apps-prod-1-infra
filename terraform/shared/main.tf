@@ -71,3 +71,24 @@ resource "aws_eip" "refractr_eip" {
     App      = "refractr"
   }
 }
+
+# Uncertain if we still *need* this domain
+# but migrating it here from itsre apps repo
+resource "aws_route53_delegation_set" "delegation_set" {
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_route53_zone" "mozilla-redirects" {
+  name = "mozilla-redirects.xyz"
+
+  delegation_set_id = aws_route53_delegation_set.delegation_set.id
+
+  tags = {
+    Name      = "mozilla-redirects.xyz"
+    Purpose   = "mozilla redirects master zone"
+    Terraform = "true"
+  }
+}
+
