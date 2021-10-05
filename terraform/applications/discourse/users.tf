@@ -21,55 +21,6 @@ resource "aws_iam_policy" "developers" {
 data "aws_iam_policy_document" "developers" {
 
   statement {
-    sid       = "DiscourseEks"
-    actions   = ["eks:DescribeCluster"]
-    resources = ["*"]
-  }
-
-  statement {
-    sid     = "DiscourseCodebuild"
-    actions = ["codebuild:*"]
-    resources = [
-      "arn:aws:codebuild:us-west-2:783633885093:project/discourse-stage",
-      "arn:aws:codebuild:us-west-2:783633885093:project/discourse-dev",
-      "arn:aws:codebuild:us-west-2:783633885093:project/discourse-prod"
-    ]
-  }
-
-  statement {
-    sid       = "DiscourseCodebuildList"
-    actions   = ["codebuild:ListProjects"]
-    resources = ["*"]
-  }
-
-  statement {
-    sid       = "DiscourseCodebuildLogs"
-    actions   = ["logs:GetLogEvents"]
-    resources = ["arn:aws:logs:us-west-2:783633885093:log-group:/aws/codebuild/discourse-*:*:*"]
-  }
-
-  # Need for CodeBuild UI
-  statement {
-    sid       = "DiscourseParameters"
-    actions   = ["ssm:*"]
-    resources = ["arn:aws:ssm:us-west-2:783633885093:paramter:/discourse/*"]
-  }
-
-  # Need for CodeBuild UI
-  statement {
-    sid       = "DiscourseParametersList"
-    actions   = ["ssm:DescribeParameters"]
-    resources = ["arn:aws:ssm:us-west-2:783633885093:*"]
-  }
-
-  # Need for CodeBuild UI
-  statement {
-    sid       = "DiscourseS3List"
-    actions   = ["s3:ListAllMyBuckets"]
-    resources = ["*"]
-  }
-
-  statement {
     sid       = "DiscourseS3"
     actions   = ["s3:*"]
     resources = ["arn:aws:s3:::discourse-*"]
