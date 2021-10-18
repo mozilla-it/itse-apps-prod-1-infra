@@ -35,6 +35,7 @@ spec:
         - '*.www.mozilla.com'
         - '*.add-ons.mozilla.com'
         - '*.add-ons.mozilla.org'
+        - foxfooding.mozilla.community
         hostedZoneID: Z06469063HC60S7SHF706
     environment: prod
     refractr:
