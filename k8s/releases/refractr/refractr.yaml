@@ -33,6 +33,8 @@ spec:
         - phish-report.mozilla.com
         - '*.phish-report.mozilla.com'
         - '*.www.mozilla.com'
+        - '*.add-ons.mozilla.com'
+        - '*.add-ons.mozilla.org'
         hostedZoneID: Z06469063HC60S7SHF706
     environment: prod
     refractr:
