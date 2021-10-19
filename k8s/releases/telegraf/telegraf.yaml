@@ -144,7 +144,6 @@ spec:
               - 'https://leadership.mozilla.community:443'
               - 'https://leandatapractices.com:443'
               - 'https://leandatapractices.org:443'
-              - 'https://library.mozilla.org:443'
               - 'https://lightning-project.org:443'
               - 'https://lockbox.firefox.com:443'
               - 'https://lockwise.firefox.com:443'
