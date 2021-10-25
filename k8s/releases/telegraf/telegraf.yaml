@@ -295,7 +295,6 @@ spec:
               - 'https://wot.iot.mozilla.org:443'
               - 'https://www-archive.mozilla.org:443'
               - 'https://www.arewefunyet.com:443'
-              - 'https://www.blogs.mozilla.com:443'
               - 'https://www.bugzilla.org:443'
               - 'https://www.ccadb.org:443'
               - 'https://www.firefox.be:443'
