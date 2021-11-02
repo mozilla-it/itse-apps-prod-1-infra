@@ -31,7 +31,6 @@ spec:
               - 'https://activations.mozilla.com:443'
               - 'https://activations.mozilla.org:443'
               - 'https://addons.mozilla.com:443'
-              - 'https://air.cdn.mozilla.net:443'
               - 'https://air.mozilla.com:443'
               - 'https://air.mozilla.org:443'
               - 'https://airmo.mozilla.org:443'
