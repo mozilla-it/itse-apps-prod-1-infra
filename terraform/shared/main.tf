@@ -21,7 +21,7 @@ locals {
   }
 
   node_groups = {
-    green_node_group = {
+    blue_node_group = {
       desired_capacity = 5,
       disk_size        = 120,
       instance_types   = ["m5.large"],
@@ -41,7 +41,7 @@ module "itse-apps-prod-1" {
   admin_users_arn             = ["arn:aws:iam::783633885093:role/maws-admin", "arn:aws:iam::517826968395:role/itsre-admin"]
   cluster_features            = local.cluster_features
   cluster_subnets             = data.terraform_remote_state.vpc.outputs.public_subnets
-  cluster_version             = "1.18"
+  cluster_version             = "1.19"
   enable_logging              = true
   external_secrets_settings   = local.external_secrets_settings
   external_secrets_prefixes   = ["/prod/*"]

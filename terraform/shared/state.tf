@@ -7,13 +7,16 @@ terraform {
 
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
+      version = "~> 3"
     }
     helm = {
-      source = "hashicorp/helm"
+      source  = "hashicorp/helm"
+      version = "~> 2"
     }
     kubernetes = {
-      source = "hashicorp/kubernetes"
+      source  = "hashicorp/kubernetes"
+      version = "~> 2"
     }
     local = {
       source = "hashicorp/local"
@@ -26,7 +29,7 @@ terraform {
     }
   }
 
-  required_version = ">= 0.13.7"
+  required_version = ">= 0.14.11"
 }
 
 data "terraform_remote_state" "vpc" {
