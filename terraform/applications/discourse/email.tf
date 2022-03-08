@@ -9,7 +9,7 @@ resource "aws_ses_domain_identity" "main" {
 # because the terraform provider doesn't support it -
 # https://github.com/hashicorp/terraform-provider-aws/issues/21129
 resource "aws_ses_configuration_set" "main" {
-  name = "discourse-config-set"
+  name                       = "discourse-config-set"
   reputation_metrics_enabled = true
   delivery_options {
     tls_policy = "Optional"
