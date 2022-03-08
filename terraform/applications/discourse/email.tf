@@ -5,6 +5,17 @@ resource "aws_ses_domain_identity" "main" {
   domain = var.discourse_mozilla
 }
 
+# this cannot be associated with the domain identity
+# because the terraform provider doesn't support it -
+# https://github.com/hashicorp/terraform-provider-aws/issues/21129
+resource "aws_ses_configuration_set" "main" {
+  name = "discourse-config-set"
+  reputation_metrics_enabled = true
+  delivery_options {
+    tls_policy = "Optional"
+  }
+}
+
 resource "aws_ses_domain_identity_verification" "main" {
   domain     = aws_ses_domain_identity.main.id
   depends_on = [aws_route53_record.ses_verification]
