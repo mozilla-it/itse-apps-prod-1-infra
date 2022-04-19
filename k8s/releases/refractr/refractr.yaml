@@ -36,6 +36,7 @@ spec:
         - '*.add-ons.mozilla.com'
         - '*.add-ons.mozilla.org'
         - foxfooding.mozilla.community
+        - webxr.today
         hostedZoneID: Z06469063HC60S7SHF706
     environment: prod
     refractr:
