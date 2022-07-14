@@ -17,6 +17,9 @@ spec:
     name: discourse
     version: "2.0.2"
   values:
+    autoscaling:
+      minReplicas: 10
+      maxReplicas: 15
     configMap:
       data:
         DISCOURSE_AUTO_EMAIL_IN_APPEND: true
