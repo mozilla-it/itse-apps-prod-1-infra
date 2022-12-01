@@ -38,13 +38,6 @@ spec:
         - foxfooding.mozilla.community
         - webxr.today
         - '*.iot.mozilla.org'
-        - getpulse.team
-        - automaticstatus.com
-        - commons.so
-        - focustime.ai
-        - getpulse.me
-        - loopteam.co
-        - reloc.io
         hostedZoneID: Z06469063HC60S7SHF706
     environment: prod
     refractr:
