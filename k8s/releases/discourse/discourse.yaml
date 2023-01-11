@@ -55,58 +55,59 @@ spec:
       enabled: true
       loggerSecretKey: /prod/discourse/logger
       name: discourse
+      store: secretsmanager-secretstore
       secrets:
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_AKISMET_API_KEY
+          property: DISCOURSE_AKISMET_API_KEY
         secretKey: DISCOURSE_AKISMET_API_KEY
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_AUTH0_CALLBACK_URL
+          property: DISCOURSE_AUTH0_CALLBACK_URL
         secretKey: DISCOURSE_AUTH0_CALLBACK_URL
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_AUTH0_CLIENT_ID
+          property: DISCOURSE_AUTH0_CLIENT_ID
         secretKey: DISCOURSE_AUTH0_CLIENT_ID
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_AUTH0_DOMAIN
+          property: DISCOURSE_AUTH0_DOMAIN
         secretKey: DISCOURSE_AUTH0_DOMAIN
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_AUTH0_CLIENT_SECRET
+          property: DISCOURSE_AUTH0_CLIENT_SECRET
         secretKey: DISCOURSE_AUTH0_CLIENT_SECRET
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_DB_HOST
+          property: DISCOURSE_DB_HOST
         secretKey: DISCOURSE_DB_HOST
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_DB_NAME
+          property: DISCOURSE_DB_NAME
         secretKey: DISCOURSE_DB_NAME
       - remoteRef:
            key: /prod/discourse/envvar
-           name: DISCOURSE_DB_PASSWORD
+           property: DISCOURSE_DB_PASSWORD
         secretKey: DISCOURSE_DB_PASSWORD
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_DB_USERNAME
+          property: DISCOURSE_DB_USERNAME
         secretKey: DISCOURSE_DB_USERNAME
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_REDIS_HOST
+          property: DISCOURSE_REDIS_HOST
         secretKey: DISCOURSE_REDIS_HOST
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_S3_UPLOAD_BUCKET
+          property: DISCOURSE_S3_UPLOAD_BUCKET
         secretKey: DISCOURSE_S3_UPLOAD_BUCKET
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_SMTP_PASSWORD
+          property: DISCOURSE_SMTP_PASSWORD
         secretKey: DISCOURSE_SMTP_PASSWORD
       - remoteRef:
           key: /prod/discourse/envvar
-          name: DISCOURSE_SMTP_USER_NAME
+          property: DISCOURSE_SMTP_USER_NAME
         secretKey: DISCOURSE_SMTP_USER_NAME
     image:
       pullPolicy: Always
