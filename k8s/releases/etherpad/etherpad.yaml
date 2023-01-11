@@ -46,6 +46,8 @@ spec:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/etherpad
       tag: v1.0.1
+    imagePullSecrets:
+      - name: dockerhub-credentials
     ingress:
       hosts:
       - host: pad.mozilla.org

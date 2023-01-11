@@ -62,6 +62,8 @@ spec:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
       tag: v2.0.6
+    imagePullSecrets:
+      - name: dockerhub-credentials
     ingress:
       hosts:
       - host: moderator.prod.mozit.cloud

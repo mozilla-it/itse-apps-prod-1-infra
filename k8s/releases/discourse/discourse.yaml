@@ -113,6 +113,8 @@ spec:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/discourse
       tag: prod-v1.0.0
+    imagePullSecrets:
+      - name: dockerhub-credentials
     ingress:
       annotations:
         nginx.ingress.kubernetes.io/server-snippet: |
