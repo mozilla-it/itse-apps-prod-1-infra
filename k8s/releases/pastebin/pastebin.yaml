@@ -52,9 +52,9 @@ spec:
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
-      tag: v3.5.8
+      tag: v3.5.9
     imagePullSecrets:
-      - name: dockerhub-credentials
+    - name: dockerhub-credentials
     ingress:
       hosts:
       - host: paste.prod.mozit.cloud
