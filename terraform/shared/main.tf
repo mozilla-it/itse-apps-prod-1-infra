@@ -1,6 +1,6 @@
 locals {
   cluster_features = {
-    "aws_calico"         = true
+    "aws_calico"         = false
     "external_secrets"   = true
     "fluentd_papertrail" = true
     "flux"               = true
