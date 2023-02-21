@@ -21,11 +21,9 @@ locals {
   }
 
   node_groups = {
-    green_node_group = {
-      # For reference
-      # AMI versions: https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html
-      release_version  = "1.21.5-20220123"
-      desired_capacity = 5,
+    blue_node_group = {
+      release_version  = "1.20.15-20220629"
+      desired_capacity = 10,
       disk_size        = 120,
       instance_types   = ["m5.large"],
       max_capacity     = 20,
