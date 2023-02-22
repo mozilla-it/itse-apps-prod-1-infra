@@ -31,24 +31,24 @@ spec:
       secrets:
       - remoteRef:
           key: /prod/pastebin/envvar
-          property: DB_HOST
-        secretKey: database_host
+          property: database_host
+        secretKey: DB_HOST
       - remoteRef:
           key: /prod/pastebin/envvar
-          property: DB_NAME
-        secretKey: database_name
+          property: database_name
+        secretKey: DB_NAME
       - remoteRef:
           key: /prod/pastebin/envvar
-          property: DB_PASS
-        secretKey: database_password
+          property: database_password
+        secretKey: DB_PASS
       - remoteRef:
           key: /prod/pastebin/envvar
-          property: DB_USER
-        secretKey: database_user
+          property: database_user
+        secretKey: DB_USER
       - remoteRef:
           key: /prod/pastebin/envvar
-          property: SESSION_KEY
-        secretKey: session_key
+          property: session_key
+        secretKey: SESSION_KEY
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/pastebin
