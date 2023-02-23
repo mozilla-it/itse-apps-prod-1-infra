@@ -115,7 +115,7 @@ spec:
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/discourse
-      tag: prod-v1.0.0
+      tag: prod-v1.0.0 # {"$imagepolicy": "flux-system:discourse-prod:tag"}
     imagePullSecrets:
     - name: dockerhub-credentials
     ingress:

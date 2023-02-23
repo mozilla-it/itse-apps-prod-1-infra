@@ -1,0 +1,18 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: discourse-prod
+  namespace: flux-system
+
+spec:
+  filterTags:
+    extract: $tag
+    pattern: ^(?P<tag>prod-v[0-9]+.[0-9]+.[0-9]+)$
+
+  imageRepositoryRef:
+    name: discourse
+
+  policy:
+    alphabetical:
+      order: asc
