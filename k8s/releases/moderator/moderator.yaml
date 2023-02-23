@@ -1,20 +1,23 @@
 ---
-apiVersion: helm.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: moderator
-  namespace: moderator-prod
   labels:
     app: moderator
-  annotations:
-    fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: regex:^(v[0-9]+.[0-9]+.[0-9]+)$
+  name: moderator
+  namespace: moderator-prod
 spec:
-  releaseName: moderator
   chart:
-    repository: https://mozilla-it.github.io/helm-charts/
-    name: mozmoderator
-    version: "0.3.1"
+    spec:
+      chart: mozmoderator
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: mozilla-helm-charts
+        namespace: flux-system
+      version: 0.3.1
+  interval: 1m0s
+  releaseName: moderator
   values:
     configMap:
       data:
@@ -36,7 +39,6 @@ spec:
     externalSecrets:
       enabled: true
       name: moderator
-      store: secretsmanager-secretstore
       secrets:
       - remoteRef:
           key: /prod/moderator/envvar
@@ -66,12 +68,13 @@ spec:
           key: /prod/moderator/envvar
           property: SENTRY_DSN
         secretKey: SENTRY_DSN
+      store: secretsmanager-secretstore
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
       tag: v2.0.6
     imagePullSecrets:
-      - name: dockerhub-credentials
+    - name: dockerhub-credentials
     ingress:
       hosts:
       - host: moderator.prod.mozit.cloud
