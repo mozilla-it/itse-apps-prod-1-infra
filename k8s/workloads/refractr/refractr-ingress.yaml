@@ -15,7 +15,7 @@ spec:
         kind: HelmRepository
         name: ingress-nginx
         namespace: flux-system
-      version: 3.33.0
+      version: 4.2.0
   interval: 1m0s
   releaseName: refractr-ingress-nginx
   values:
@@ -37,6 +37,11 @@ spec:
         use-forwarded-headers: "true"
         use-proxy-protocol: "false"
       enableCustomResources: false
+      ingressClassResource:
+        controllerValue: k8s.io/ingress-nginx-refractr-prod
+        default: false
+        enabled: true
+        name: ingress-nginx-refractr-prod
       metrics:
         enabled: true
         service:
@@ -61,7 +66,6 @@ spec:
           service.beta.kubernetes.io/aws-load-balancer-eip-allocations: eipalloc-0e9eb2d9f63a68ab8,eipalloc-0f4a591198b52e017,eipalloc-06d4150517deeeef7
           service.beta.kubernetes.io/aws-load-balancer-type: nlb
         externalTrafficPolicy: Local
-      useIngressClassOnly: true
     rbac:
       create: true
       scope: true
