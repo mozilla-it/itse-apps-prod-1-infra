@@ -119,6 +119,7 @@ spec:
     imagePullSecrets:
     - name: dockerhub-credentials
     ingress:
+      className: ingress-nginx-discourse-prod
       annotations:
         nginx.ingress.kubernetes.io/server-snippet: |
           location /webhooks/aws {

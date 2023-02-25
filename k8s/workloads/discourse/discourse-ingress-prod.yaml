@@ -42,6 +42,8 @@ spec:
         use-forwarded-headers: "true"
         use-proxy-protocol: "false"
       enableCustomResources: false
+      watchIngressWithoutClass: true
+      ingressClass: ingress-nginx-discourse-prod
       ingressClassResource:
         controllerValue: k8s.io/ingress-nginx-discourse-prod
         default: false
