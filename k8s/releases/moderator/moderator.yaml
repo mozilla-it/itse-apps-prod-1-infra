@@ -76,6 +76,7 @@ spec:
     imagePullSecrets:
     - name: dockerhub-credentials
     ingress:
+      className: ingress-nginx-moderator-prod
       hosts:
       - host: moderator.prod.mozit.cloud
         paths:
