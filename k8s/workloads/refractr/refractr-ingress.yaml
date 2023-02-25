@@ -15,7 +15,7 @@ spec:
         kind: HelmRepository
         name: ingress-nginx
         namespace: flux-system
-      version: 4.2.0
+      version: 4.2.5
   interval: 1m0s
   releaseName: refractr-ingress-nginx
   values:
@@ -37,6 +37,7 @@ spec:
         use-forwarded-headers: "true"
         use-proxy-protocol: "false"
       enableCustomResources: false
+      watchIngressWithoutClass: true
       ingressClassResource:
         controllerValue: k8s.io/ingress-nginx-refractr-prod
         default: false
