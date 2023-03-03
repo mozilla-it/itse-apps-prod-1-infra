@@ -200,8 +200,6 @@ spec:
           - https://openwebgames.com:443
           - https://pad.mozilla.org:443
           - https://participation.planet.mozilla.org:443
-          - https://paste.mozilla.org:443
-          - https://pastebin.mozilla.org:443
           - https://people.mozilla.org:443
           - https://phish-error.mozilla.com:443
           - https://phish-report.mozilla.com:443
