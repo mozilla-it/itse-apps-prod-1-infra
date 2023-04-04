@@ -157,6 +157,7 @@ spec:
           - https://mdn.mozillademos.org:443
           - https://metricsgraphicsjs.org:443
           - https://mobilepartners.mozilla.org:443
+          - https://moderator.mozilla.org:443
           - https://mozdev.org:443
           - https://mozfestea.org:443
           - https://mozilla-podcasts.org:443
