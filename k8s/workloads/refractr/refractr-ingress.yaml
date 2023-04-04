@@ -44,7 +44,7 @@ spec:
         enabled: true
         name: ingress-nginx-refractr-prod
       metrics:
-        enabled: true
+        enabled: false
         service:
           annotations:
             prometheus.io/port: "10254"
