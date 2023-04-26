@@ -70,6 +70,7 @@ spec:
           - https://confsurvey.mozilla.org:443
           - https://connected.mozilla.org:443
           - https://consultants.mozdev.org:443
+          - https://content-signature.cdn.mozilla.net:443
           - https://content.mozilla.org:443
           - https://contribute.mozilla.org:443
           - https://contributejson.org:443
