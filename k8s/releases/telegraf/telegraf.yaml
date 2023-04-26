@@ -258,6 +258,7 @@ spec:
           - https://students.mozilla.org:443
           - https://support-dev.allizom.org:443
           - https://support.allizom.org:443
+          - https://support.cdn.mozilla.net:443
           - https://support.mozilla.com:443
           - https://support.mozilla.org:443
           - https://supportsprint.mozilla.community:443
