@@ -54,6 +54,13 @@ spec:
         enabled: true
     deployment:
       arn_role: arn:aws:iam::783633885093:role/discourse/discourse-prod
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1024Mi
+        requests:
+          cpu: 750m
+          memory: 768Mi
     externalSecrets:
       enabled: true
       loggerSecretKey: /prod/discourse/logger
