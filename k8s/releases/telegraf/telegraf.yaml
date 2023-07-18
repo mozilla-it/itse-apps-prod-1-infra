@@ -63,7 +63,6 @@ spec:
           - https://careers.mozilla.com:443
           - https://ccadb.org:443
           - https://cleopatra.io:443
-          - https://code.cdn.mozilla.net:443
           - https://college.mozilla.com:443
           - https://college.mozilla.org:443
           - https://communitystore.mozilla.org:443
