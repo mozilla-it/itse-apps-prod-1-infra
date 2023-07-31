@@ -47,7 +47,6 @@ spec:
           - https://beta.mozilla.org:443
           - https://bidiui.mozdev.org:443
           - https://blocked.cdn.mozilla.net:443
-          - https://blocklists.settings.services.mozilla.com:443
           - https://blog.getfirebug.com:443
           - https://blog.getpocket.com:443
           - https://blog.lizardwrangler.com:443
