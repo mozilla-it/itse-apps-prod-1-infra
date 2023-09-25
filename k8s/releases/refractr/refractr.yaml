@@ -43,6 +43,7 @@ spec:
         - foxfooding.mozilla.community
         - webxr.today
         - '*.iot.mozilla.org'
+        - help.getpocket.com
         hostedZoneID: Z06469063HC60S7SHF706
       name: prod
     refractr:
