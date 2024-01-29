@@ -89,6 +89,6 @@ variable "ca_cert_identifier" {
 }
 
 variable "apply_immediately" {
-  type = bool
-  default = true 
+  type    = bool
+  default = true
 }
