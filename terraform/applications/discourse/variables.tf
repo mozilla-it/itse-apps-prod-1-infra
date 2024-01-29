@@ -59,7 +59,7 @@ variable "psql_storage_max" {
 }
 
 variable "psql_version" {
-  default = "10.17"
+  default = "14.7"
   type    = string
 }
 
@@ -81,4 +81,14 @@ variable "redis_version" {
 variable "region" {
   default = "us-west-2"
   type    = string
+}
+
+variable "ca_cert_identifier" {
+  default     = "rds-ca-rsa4096-g1"
+  description = "Allows you to modify the underlying RDS certificate"
+}
+
+variable "apply_immediately" {
+  type = bool
+  default = true 
 }
