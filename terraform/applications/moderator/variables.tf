@@ -52,3 +52,9 @@ variable "region" {
   default = "us-west-2"
   type    = string
 }
+
+variable "ca_cert_identifier" {
+  default     = "rds-ca-rsa4096-g1"
+  description = "Allows you to modify the underlying RDS certificate"
+}
+
