@@ -44,7 +44,7 @@ variable "project_email" {
 }
 
 variable "psql_instance" {
-  default = "db.t3.small"
+  default = "db.m5.large"
   type    = string
 }
 
@@ -74,7 +74,7 @@ variable "redis_num_nodes" {
 }
 
 variable "redis_version" {
-  default = "5.0.4"
+  default = "5.0.6"
   type    = string
 }
 
