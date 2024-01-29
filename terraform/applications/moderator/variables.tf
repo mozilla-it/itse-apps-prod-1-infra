@@ -29,7 +29,7 @@ variable "mysql_storage_max" {
 }
 
 variable "mysql_version" {
-  default = "5.7.42""
+  default = "5.7.42"
   type    = string
 }
 
