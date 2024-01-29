@@ -33,7 +33,6 @@ resource "aws_db_instance" "moderator" {
   max_allocated_storage       = var.mysql_storage_max
   multi_az                    = var.environment == "prod" ? true : false
   allow_major_version_upgrade = true
-  name                        = var.project
   username                    = var.project
   backup_retention_period     = 30
   db_subnet_group_name        = aws_db_subnet_group.moderator-db.id
