@@ -25,7 +25,7 @@ spec:
       min_replicas: 3
     image:
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/refractr
-      tag: v0.0.165 # {"$imagepolicy": "flux-system:refractr-prod:tag"}
+      tag: v0.0.166 # {"$imagepolicy": "flux-system:refractr-prod:tag"}
     my_issuer:
       create: true
       dns:
