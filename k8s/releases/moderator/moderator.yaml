@@ -71,7 +71,7 @@ spec:
     image:
       pullPolicy: Always
       repository: 783633885093.dkr.ecr.us-west-2.amazonaws.com/moderator
-      tag: v2.0.7 # {"$imagepolicy": "flux-system:moderator-prod:tag"}
+      tag: v2.1.0 # {"$imagepolicy": "flux-system:moderator-prod:tag"}
     imagePullSecrets:
     - name: dockerhub-credentials
     ingress:
