@@ -44,6 +44,7 @@ spec:
           - https://ask.mozilla.org:443
           - https://ateam.planet.mozilla.org:443
           - https://aurora.mozilla.org:443
+          - https://balrog.services.mozilla.com:443
           - https://beta.mozilla.org:443
           - https://bidiui.mozdev.org:443
           - https://blocked.cdn.mozilla.net:443
@@ -158,6 +159,7 @@ spec:
           - https://mdn.dev:443
           - https://mdn.mozillademos.org:443
           - https://metricsgraphicsjs.org:443
+          - https://mitmdetection.services.mozilla.com:443
           - https://mobile.cdn.mozilla.net:443
           - https://mobilepartners.mozilla.org:443
           - https://moderator.mozilla.org:443
@@ -199,6 +201,7 @@ spec:
           - https://newtab.cdn.mozilla.net:443
           - https://nightly.mozilla.org:443
           - https://normandy-cloudfront.cdn.mozilla.net:443
+          - https://normandy-devtools.services.mozilla.com:443
           - https://nucleus.mozilla.org:443
           - https://observatory-test.mozilla.org:443
           - https://onemozilla.org:443
