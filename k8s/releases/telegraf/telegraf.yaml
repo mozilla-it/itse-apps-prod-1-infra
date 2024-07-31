@@ -29,16 +29,12 @@ spec:
           sources:
           - https://accounts-static.cdn.mozilla.net:443
           - https://activate.mozilla.community:443
-          - https://activations.mozilla.com:443
-          - https://activations.mozilla.org:443
           - https://addons-code-manager.cdn.mozilla.net:443
           - https://addons.mozilla.com:443
           - https://air.mozilla.com:443
           - https://air.mozilla.org:443
           - https://airmo.mozilla.org:443
           - https://ambassadors.mozilla.org:443
-          - https://apps.mozilla.com:443
-          - https://apps.mozilla.org:443
           - https://arewefunyet.com:443
           - https://arewestableyet.com:443
           - https://ask.mozilla.org:443
@@ -154,7 +150,6 @@ spec:
           - https://maf.mozdev.org:443
           - https://malware-error.mozilla.com:443
           - https://mana.mozilla.org:443
-          - https://market.mozilla.org:443
           - https://masterfirefoxos.mozilla.org:443
           - https://mdn.dev:443
           - https://mdn.mozillademos.org:443
