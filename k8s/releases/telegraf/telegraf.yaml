@@ -216,7 +216,6 @@ spec:
           - https://pontoon.mozillalabs.com:443
           - https://popcornjs.org:443
           - https://print.mozilla.com:443
-          - https://prod.refractr.mozit.cloud:443
           - https://product-identity.design.firefox.com:443
           - https://projects.planet.mozilla.org:443
           - https://prototype.internethealthreport.org:443
@@ -226,7 +225,6 @@ spec:
           - https://quickfilters.mozdev.org:443
           - https://quickfolders.mozdev.org:443
           - https://quickpasswords.mozdev.org:443
-          - https://refractr.mozilla.org:443
           - https://release.mozilla.org:443
           - https://releng.planet.mozilla.org:443
           - https://removedupes.mozdev.org:443
