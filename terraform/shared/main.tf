@@ -80,16 +80,3 @@ resource "aws_route53_delegation_set" "delegation_set" {
     create_before_destroy = true
   }
 }
-
-resource "aws_route53_zone" "mozilla-redirects" {
-  name = "mozilla-redirects.xyz"
-
-  delegation_set_id = aws_route53_delegation_set.delegation_set.id
-
-  tags = {
-    Name      = "mozilla-redirects.xyz"
-    Purpose   = "mozilla redirects master zone"
-    Terraform = "true"
-  }
-}
-
